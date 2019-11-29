@@ -1,0 +1,174 @@
+@CHARSET "ISO-8859-1";
+
+body {
+    background-color: #c0c0c0;
+}
+
+h1 {
+    color: #3123ab;
+    margin-left: 40px;
+}
+h2{
+	color: black; 
+	font-size:40px;  
+} 
+.add-button {
+    background-color: #8080ff; 
+    color: black;
+    width: 100%;
+    padding: 8px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border:none;
+    cursor:pointer;
+}
+
+.reset-button {
+    background-color: #8080ff; 
+    color: black;
+    width: 100%;
+    padding: 8px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border:none;
+    cursor:pointer;
+}
+
+.list-button {
+    background-color: #8080ff; 
+    color: black;
+    width: 100%;
+    padding: 8px 85px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border:none;
+    cursor:pointer;
+}
+
+.delete-button {
+    background-color: #FF0000; /* red */
+    color: black;
+    width: 100%;
+    padding: 8px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border:none;
+    cursor:pointer;
+}
+
+.update-button {
+    background-color: #00FF00; /* green */
+    color: black;
+    width: 100%;
+    padding: 8px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border:none;
+    cursor:pointer;
+}
+
+.select-button {
+    background-color: #00FF00;
+    color: black;
+    width: 100%;
+    padding: 8px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border:none;
+    cursor:pointer;
+}
+
+body {
+	/* The image used */
+  background-image: url("bg.jpg");
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.button{
+    height:50px;
+    width:200px;
+    color: blue;
+    bg-color: blue;
+    font-size:25px;
+}
+
+title {
+	color: green;
+}
+
+table {
+	width:10px;
+	color: black;
+	bgcolor: white;
+	border:0;
+}
+
+.List{
+	bg-color: blue;
+}
+
+.body1 {
+	/* The image used */
+  background-image: url("z.jpg");
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+home{
+	background-image: url("z.jpg");
+  /* Full height */
+  height: 100%;
+}
+
+.homebutton{
+	height:40px;
+    width:70px;
+    font-size:20px;
+}
+
+.body2 {
+
+  background-image: url("bg3.jpg");
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.index{
+	color:white;
+}

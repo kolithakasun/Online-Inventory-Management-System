@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<Querys>
+
+	<!-- Create table Sales Query -->
+	<query id="create_sales_table">
+        <![CDATA[
+            CREATE TABLE sales(
+				salesID varchar(10) not null,
+				productID varchar(20),
+				date varchar(20),
+				dAddress varchar(20),
+				unitPrice varchar(20),
+				quantity  varchar(20),
+				total varchar(20),
+				paidMethod varchar(10) DEFAULT 'Cash',
+				primary key (salesID)
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE Sales Query -->
+	<query id="drop_sales_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS sales 
+        ]]>
+	</query>
+
+	<!-- Select all Sales orders Query -->
+	<query id="insert_sales">
+        <![CDATA[
+          	insert into employee (salesID, productID, date, dAddress, unitPrice, quantity, total, paidMethod) 
+          	values (?, ?, ?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular Sales by id Query -->
+	<query id="sales_by_id">
+         <![CDATA[        
+            select * from sales where sales.salesID = ?
+        ]]>
+	</query>
+
+	<!-- Select all Sales -->
+	<query id="all_sales">
+         <![CDATA[        
+            select * from sales
+        ]]>
+	</query>
+
+	<!-- Delete a particular Sales by id Query -->
+	<query id="remove_sales">
+         <![CDATA[        
+            delete from sales where sales.salesID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular sales by id Query -->
+	<query id="update_sales">
+         <![CDATA[        
+            update sales as s
+            set s.salesID = ?, s.productID = ?, s.date = ?, s.dAddress = ?, s.unitPrice = ?, s.quantity = ?, s.total = ?, s.paidMethod = ? 
+            where s.salesID = ?
+        ]]>
+	</query>
+	
+		<!-- Get sales IDs Query -->
+	<query id="sales_ids">
+         <![CDATA[        
+            select s.salesID from sales as s
+        ]]>
+	</query>
+	
+</Querys>

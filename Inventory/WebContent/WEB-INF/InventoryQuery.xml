@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<Querys>
+
+	<!-- Create table Sales Query -->
+	<query id="create_sales_table">
+        <![CDATA[
+            CREATE TABLE sales(
+				salesID varchar(10) not null,
+				productID varchar(20),
+				date varchar(20),
+				dAddress varchar(20),
+				unitPrice varchar(20),
+				quantity  varchar(20),
+				total varchar(20),
+				paidMethod varchar(10) DEFAULT 'Cash',
+				primary key (salesID)
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE Sales Query -->
+	<query id="drop_sales_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS sales 
+        ]]>
+	</query>
+
+	<!-- Select all Sales orders Query -->
+	<query id="insert_sales">
+        <![CDATA[
+          	insert into sales (salesID, productID, date, dAddress, unitPrice, quantity, total, paidMethod) 
+          	values (?, ?, ?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular Sales by id Query -->
+	<query id="sales_by_id">
+         <![CDATA[        
+            select * from sales where sales.salesID = ?
+        ]]>
+	</query>
+
+	<!-- Select all Sales -->
+	<query id="all_sales">
+         <![CDATA[        
+            select * from sales
+        ]]>
+	</query>
+
+	<!-- Delete a particular Sales by id Query -->
+	<query id="remove_sales">
+         <![CDATA[        
+            delete from sales where sales.salesID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular sales by id Query -->
+	<query id="update_sales">
+         <![CDATA[        
+            update sales as s
+            set s.salesID = ?, s.productID = ?, s.date = ?, s.dAddress = ?, s.unitPrice = ?, s.quantity = ?, s.total = ?, s.paidMethod = ? 
+            where s.salesID = ?
+        ]]>
+	</query>
+	
+		<!-- Get sales IDs Query -->
+	<query id="sales_ids">
+         <![CDATA[        
+            select s.salesID from sales as s
+        ]]>
+	</query>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<query id="create_product_table">
+        <![CDATA[
+            CREATE TABLE product(
+				productID varchar(10) not null,
+				productName varchar(20),
+				productPrice varchar(15),
+				quantity varchar(15),
+				q varchar(20),
+				primary key (productID)
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE EMPLOYEES Query -->
+	<query id="drop_table_p">
+         <![CDATA[        
+            DROP TABLE IF EXISTS product 
+        ]]>
+	</query>
+
+	<!-- Select all customer orders Query -->
+	<query id="insert_product">
+        <![CDATA[
+          	insert into product (productID, productName, productPrice, quantity,q) 
+          	values (?, ?, ?, ?,?)
+        ]]>
+	</query>
+
+	<!-- Select a particular product by id Query -->
+	<query id="product_by_id">
+         <![CDATA[        
+            select * from product where product.productID = ?
+        ]]>
+	</query>
+
+	<!-- Select all products -->
+	<query id="all_products">
+         <![CDATA[        
+            select * from product
+        ]]>
+	</query>
+
+	<!-- Delete a particular product by id Query -->
+	<query id="remove_product">
+         <![CDATA[        
+            delete from product where product.productID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular product by id Query -->
+	<query id="update_product">
+         <![CDATA[        
+            update product as p 
+            set p.productName = ?, p.productPrice = ?, p.quantity = ?, p.q = ?
+            where p.productID = ?
+        ]]>
+	</query>
+	
+		<!-- Get product IDs Query -->
+	<query id="product_ids">
+         <![CDATA[        
+            select p.productID from product as p
+        ]]>
+	</query>
+	
+	
+	
+	
+	
+	
+	
+	
+	<query id="create_employee_table">
+        <![CDATA[
+            CREATE TABLE employee(
+				employeeID varchar(10) not null,
+				employeeName varchar(20),
+				designation varchar(15),
+				faculty varchar(15),
+				department varchar(15),
+				address  varchar(50),
+				qualifications varchar(20),
+				gender varchar(10) DEFAULT 'Male',
+				primary key (employeeID)
+			)
+        ]]>
+	</query>
+
+	
+	<query id="drop_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS employee 
+        ]]>
+	</query>
+
+	
+	<query id="insert_employee">
+        <![CDATA[
+          	insert into employee (employeeID, employeeName, designation, faculty, department, address, qualifications, gender) 
+          	values (?, ?, ?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	
+	<query id="employee_by_id">
+         <![CDATA[        
+            select * from employee where employee.employeeID = ?
+        ]]>
+	</query>
+
+	
+	<query id="all_employees">
+         <![CDATA[        
+            select * from employee
+        ]]>
+	</query>
+
+	
+	<query id="remove_employee">
+         <![CDATA[        
+            delete from employee where employee.employeeID = ?
+        ]]>
+	</query>
+	
+	
+	<query id="update_employee">
+         <![CDATA[        
+            update employee as e 
+            set e.employeeName = ?, e.designation = ?, e.faculty = ?, e.department = ?, e.address = ?, e.qualifications = ?, e.gender = ? 
+            where e.employeeID = ?
+        ]]>
+	</query>
+	
+	
+	<query id="employee_ids">
+         <![CDATA[        
+            select e.employeeID from employee as e
+        ]]>
+	</query>
+	
+	
+	
+	
+	
+	
+	<!-- Supplier Queries -->
+	<!-- Create table supplier Query -->
+	<query id="create_supplier_table">
+        <![CDATA[
+            CREATE TABLE supplier(
+				supplierID varchar(10) not null,
+				supplierName varchar(20),
+				designation varchar(15),
+				StockName varchar(15),
+				department varchar(15),
+				address  varchar(50),
+				StockKeeper varchar(20),
+				Origin varchar(10) DEFAULT 'Local',
+				primary key (supplierID)
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE SUPPLIER Query -->
+	<query id="drop_supplier_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS supplier 
+        ]]>
+	</query>
+
+	<!-- Select all supplier orders Query -->
+	<query id="insert_supplier">
+        <![CDATA[
+          	insert into supplier (supplierID, supplierName, designation, StockName, department, address, StockKeeper, Origin) 
+          	values (?, ?, ?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular supplier by id Query -->
+	<query id="supplier_by_id">
+         <![CDATA[        
+            select * from supplier where supplier.supplierID = ?
+        ]]>
+	</query>
+
+	<!-- Select all supplier -->
+	<query id="all_supplier">
+         <![CDATA[        
+            select * from supplier
+        ]]>
+	</query>
+
+	<!-- Delete a particular supplier by id Query -->
+	<query id="remove_supplier">
+         <![CDATA[        
+            delete from supplier where supplier.supplierID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular supplier by id Query -->
+	<query id="update_supplier">
+         <![CDATA[        
+            update supplier as e 
+            set e.supplierName = ?, e.StockName = ?, e.faculty = ?, e.department = ?, e.address = ?, e.StockKeeper = ?, e.Origin = ? 
+            where e.employeeID = ?
+        ]]>
+	</query>
+	
+		<!-- Get supplier IDs Query -->
+	<query id="supplier_ids">
+         <![CDATA[        
+            select e.supplierID from supplier as e
+        ]]>
+	</query>
+	
+	
+	
+</Querys>
