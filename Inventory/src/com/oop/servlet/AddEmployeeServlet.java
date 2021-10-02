@@ -28,20 +28,20 @@ public class AddEmployeeServlet extends HttpServlet {
 
 		response.setContentType("text/html");
 
-		Employee employee = new Employee();
+		Employee employee2 = new Employee();
 		
-		employee.setName(request.getParameter("staffName"));
-		employee.setAddress(request.getParameter("address"));
-		employee.setDesignation(request.getParameter("nic"));
-		employee.setFacultyName(request.getParameter("faculty"));
-		employee.setDepartment(request.getParameter("department"));
-		employee.setQualifications(request.getParameter("qualification"));
-		employee.setGender(request.getParameter("gender"));
+		employee2.setName(request.getParameter("staffName"));
+		employee2.setAddress(request.getParameter("address"));
+		employee2.setDesignation(request.getParameter("nic"));
+		employee2.setFacultyName(request.getParameter("faculty"));
+		employee2.setDepartment(request.getParameter("department"));
+		employee2.setQualifications(request.getParameter("qualification"));
+		employee2.setGender(request.getParameter("gender"));
 
 		IEmployeeService iEmployeeService = new EmployeeServiceImpl();
-		iEmployeeService.addEmployee(employee);
+		iEmployeeService.addEmployee(employee2);
 
-		request.setAttribute("employee", employee);
+		request.setAttribute("employee", employee2);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/ListEmployees.jsp");
 		dispatcher.forward(request, response);
 	}
